@@ -3,7 +3,6 @@ package assignment1;
 public class Calculator {
 
 public static int add(int v1, int v2){
-        int total = v1+v2;
         return v1+v2;
     }
 
