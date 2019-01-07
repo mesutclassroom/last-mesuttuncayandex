@@ -8,11 +8,11 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
-            post {
-                always {
-                     junit 'target/surefire-reports/*.xml'
-                 }
-            }
+post {
+    always {
+        emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+    }
+}
         }
     }
 }
